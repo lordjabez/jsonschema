@@ -158,7 +158,7 @@ def extend(validator, validators, version=None):
 
 
 Draft3Validator = create(
-    meta_schema=_utils.load_schema("draft3"),
+    meta_schema=_utils.DRAFT3_SCHEMA,
     validators={
         "$ref" : _validators.ref,
         "additionalItems" : _validators.additionalItems,
@@ -187,7 +187,7 @@ Draft3Validator = create(
 )
 
 Draft4Validator = create(
-    meta_schema=_utils.load_schema("draft4"),
+    meta_schema=_utils.DRAFT4_SCHEMA,
     validators={
         "$ref" : _validators.ref,
         "additionalItems" : _validators.additionalItems,
