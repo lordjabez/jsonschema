@@ -3,8 +3,6 @@ from __future__ import division, unicode_literals
 import contextlib
 import json
 import numbers
-import os
-
 
 try:
     import requests
@@ -372,10 +370,8 @@ class RefResolver(object):
             else:
                 result = requests.get(uri).json
         else:
-
-            # Instead of trying to open a remote URI, we just load the schema from file.
-            with open(os.path.join('schemas', uri)) as s:
-                result = json.load(s)
+            # Otherwise, pass off to urllib and assume utf-8
+            result = json.loads(urlopen(uri).read().decode("utf-8"))
 
         if self.cache_remote:
             self.store[uri] = result
