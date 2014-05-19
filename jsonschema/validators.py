@@ -208,6 +208,7 @@ Draft4Validator = create(
         "pattern" : _validators.pattern,
         "patternProperties" : _validators.patternProperties,
         "properties" : _validators.properties_draft4,
+        "required" : _validators.required_draft4,
         "type" : _validators.type_draft4,
         "uniqueItems" : _validators.uniqueItems,
     },
